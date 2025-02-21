@@ -1,0 +1,246 @@
+:root {
+  --dark-body1: #000000;
+  --dark-body2:#1c1b5c;
+  --dark-main:#19191a;
+  --dark-second: #004aad;
+  --dark-hover: #3f3d59;
+  --dark-text: #ffffff;
+
+  /*--light-body: linear-gradient(90deg, #fff7ad,#ffa9f9);*/
+  --light-body1:rgb(255, 247, 173);
+  --light-body2:rgb(255, 169, 249);
+  --light-main: #fdfdfd;
+  --light-second:#ff5757;
+  --light-hover: #fbdc5f;
+  --light-text: #151426;
+
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  --font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dark {
+  --bg-body1: var(--dark-body1);
+  --bg-body2: var(--dark-body2);
+  --bg-main: var(--dark-main);
+  --bg-second: var(--dark-second);
+  --color-hover: var(--dark-hover);
+  --color-txt: var(--dark-text);
+}
+
+.light {
+  --bg-body1: var(--light-body1);
+  --bg-body2: var(--light-body2);
+  --bg-main: var(--light-main);
+  --bg-second: var(--light-second);
+  --color-hover: var(--light-hover);
+  --color-txt: var(--light-text);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  display: grid;
+  font-family: var(--font-family);
+  background: linear-gradient(90deg,var(--bg-body1),var(--bg-body2));
+}
+
+.calendar-display{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.calendar {
+  height: max-content;
+  width: max-content;
+  background-color: var(--bg-main);
+  border-radius: 30px;
+  padding: 20px;
+  overflow: hidden;
+  /* transform: scale(1.25); */
+  color:var(--color-txt);
+  border:1px solid var(--bg-second);
+}
+
+.light .calendar {
+  box-shadow: var(--shadow);
+}
+
+.calendar-header{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.year-change{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:background-color ease-in 0.2s;
+}
+
+.year-change:hover{
+  background-color: #eaa4df;
+}
+
+.calendar-body{
+margin-bottom: 20px;
+}
+
+.week-days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  margin-bottom:5px; 
+}
+
+.week-days div{
+  display: grid;
+  place-items: center;
+}
+
+.days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+.days div{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  transition: background-color ease-in-out 0.2s;
+  cursor:pointer;
+}
+
+.days div:hover
+{
+  background-color: var(--color-hover);
+}
+
+.curr-date
+{
+  background-color: var(--bg-second);
+}
+
+
+
+
+/*Mini calendar*/
+
+.mini-calendar
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-main);
+  border-radius: 10%;
+  height: 150px;
+  width: 220px;
+  border:1px solid var(--bg-second);
+}
+
+.today-date,
+.today-month
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.today-date
+{
+  height: 100%;
+  width: 55%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-txt);
+}
+
+.today-date span:first-child
+{
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.today-month
+{
+  background-color: var(--bg-second);
+  height: 100%;
+  width: 45%;
+  border-radius: 15%;
+
+  color: #ffffff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+/*Toggle btn*/
+.calendar-footer
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.toggle-btn
+{
+  background-color: var(--bg-body2);
+  height: 40px;
+  width: 80px;
+  position: relative;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.toggle-btn.active
+{
+  background-color: var(--bg-second);
+}
+
+.icon
+{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+
+  font-size: 30px;
+  color: var(--bg-body1);
+
+  height: 20px;
+  width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.toggle-btn.active .icon
+{
+  color: #fff;
+  left:calc(100% - 20px - 10px);
+}

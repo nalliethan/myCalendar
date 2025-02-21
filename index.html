@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Calendar</title>
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+
+   <!-- Boxicons CSS -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+</head>
+<body class="light">
+  <div class="calendar-display">
+    <div class="calendar">
+      <div class="calendar-header">
+      
+        <span class="year-change" id="prev-year">
+          <pre><</pre>
+        </span>
+
+        <div class="month-year-header"></div>
+
+        <span class="year-change" id="next-year">
+          <pre>></pre>
+        </span>
+      
+      </div>
+
+      <div class="calendar-body">
+        <div class="week-days">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div> 
+        </div>
+
+        <div class="days">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+        </div>
+      </div>
+
+      <div class="calendar-footer">
+        <div class="toggle-btn">
+          <div class="icon">
+            <i class='bx bx-sun'></i>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <div class="mini-calendar">
+      <div class="today-date">
+        <span class="today-date-date"></span>
+        <span class="today-date-day"></span>
+      </div>
+      <div class="today-month">
+        <span class="today-month-month"></span>
+        <span class="today-month-year"></span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
